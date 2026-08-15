@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids' Collection | The Reveal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo">THE <span>REVEAL</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#mens">Men's</a></li>
+          <li><a href="index.html#womens">Women's</a></li>
+          <li><a href="index.html#kids" aria-current="page">Kids</a></li>
+          <li><a href="index.html#baby">Baby Dress</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-link">🛍 Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="category-heading" style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+      <h2>Kids' Exclusive Collection</h2>
+      <p>Playful, durable, and trendy outfits for your little ones.</p>
+    </div>
+
+    <!-- pdct add -->
+    <div class="product-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-swatch swatch-kids" style="padding: 0; overflow: hidden;">
+          <img src="images/tshirt_set.jpg" alt="Graphic T-Shirt Set" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="product-info">
+          <h3>Graphic T-Shirt & Shorts Set</h3>
+          <p class="product-meta">Ages: 4 – 10 yrs</p>
+          <p class="product-price">৳ 850</p>
+          <div class="product-actions">
+           <a href="javascript:void(0);" onclick="addToCart('Graphic T-Shirt & Shorts Set', 'Kids', 850, 'images/tshirt_set.jpg')" class="btn btn-add">Add to Cart</a>
+           <a href="checkout.php?name=Graphic T-Shirt & Shorts Set&price=850" class="btn btn-buy">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-swatch swatch-kids" style="padding: 0; overflow: hidden;">
+          <img src="images/dungarees.jpg" alt="Denim Dungaree" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="product-info">
+          <h3>Stylish Denim Dungaree</h3>
+          <p class="product-meta">Ages: 3 – 8 yrs</p>
+          <p class="product-price">৳ 1,200</p>
+          <div class="product-actions">
+            <a href="javascript:void(0);" onclick="addToCart('Stylish Denim Dungaree', 'Kids', 1200, 'images/dungarees.jpg')" class="btn btn-add">Add to Cart</a>
+            <a href="checkout.php?name=Stylish Denim Dungaree&price=1200" class="btn btn-buy">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-swatch swatch-kids" style="padding: 0; overflow: hidden;">
+          <img src="images/party_frock.jpg" alt="Party Frock" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="product-info">
+          <h3>Princess Party Frock</h3>
+          <p class="product-meta">Ages: 5 – 12 yrs</p>
+          <p class="product-price">৳ 1,600</p>
+          <div class="product-actions">
+            <a href="javascript:void(0);" onclick="addToCart('Princess Party Frock', 'Kids', 1600, 'images/party_frock.jpg')" class="btn btn-add">Add to Cart</a>
+            <a href="checkout.php?name=Princess Party Frock&price=1600" class="btn btn-buy">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-swatch swatch-kids" style="padding: 0; overflow: hidden;">
+          <img src="images/jacket.jpg" alt="Winter Jacket" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="product-info">
+          <h3>Winter Puffer Jacket</h3>
+          <p class="product-meta">Ages: 6 – 14 yrs</p>
+          <p class="product-price">৳ 2,100</p>
+          <div class="product-actions">
+            <a href="javascript:void(0);" onclick="addToCart('Winter Puffer Jacket', 'Kids', 2100, 'images/jacket.jpg')" class="btn btn-add">Add to Cart</a>
+            <a href="checkout.php?name=Winter Puffer Jacket&price=2100" class="btn btn-buy">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Project by S Islam Roni|Team OkaZaki.</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com/sakibronii" target="_blank">Facebook</a> | 
+        <a href="https://www.linkedin.com/in/sakibul-islam-roni-37b224241/" target="_blank">LinkedIn</a> |
+        <a href="mailto:sakibulislamroni1815@gmail.com">sakibulislamroni1815@gmail.com</a>
+    </div>
+    <p>phone: 01331775590</p>
+  </footer>
+  <script>
+    // product add on cart (Updated with imageSrc)
+    function addToCart(name, category, price, imageSrc) {
+        let cart = JSON.parse(localStorage.getItem('reveal_cart')) || [];
+        
+        // check cart 
+        let existingItem = cart.find(item => item.name === name);
+        if(existingItem) {
+            existingItem.qty += 1; 
+        } else {
+            // new item add
+            cart.push({ name: name, category: category, price: price, qty: 1, image: imageSrc }); 
+        }
+        
+        localStorage.setItem('reveal_cart', JSON.stringify(cart));
+        updateCartCount();
+    }
+
+    //header cart update
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('reveal_cart')) || [];
+        let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+        let countElement = document.getElementById('cart-count');
+        if(countElement) {
+            countElement.innerText = totalQty;
+        }
+    }
+
+    window.onload = updateCartCount;
+</script>
+
+</body>
+</html>

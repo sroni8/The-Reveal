@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | The Reveal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="deep-bg">
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo">THE <span>REVEAL</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#mens">Men's</a></li>
+          <li><a href="index.html#womens">Women's</a></li>
+          <li><a href="index.html#kids">Kids</a></li>
+          <li><a href="index.html#baby">Baby Dress</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-link" aria-current="page">🛍 Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="page-heading">
+      <h1>Your Cart</h1>
+      <p>Review your picks before the curtain lifts on checkout.</p>
+    </div>
+
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <div class="row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">৳ 0</span>
+      </div>
+      <div class="row">
+        <span>Delivery</span>
+        <span id="cart-delivery">৳ 100</span>
+      </div>
+      <div class="row total">
+        <span>Total</span>
+        <span id="cart-total">৳ 0</span>
+      </div>
+      <a href="#" id="checkout-btn" class="btn btn-add btn-block" style="margin-top: 18px;">Proceed to Checkout</a>
+    </div>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>Project by Roni | CSE Batch 67_L, Team OkaZaki.</p>
+  </footer>
+
+  <!-- ================= JAVASCRIPT (Dynamic Cart) ================= -->
+  <script>
+    function renderCart() {
+      let cart = JSON.parse(localStorage.getItem('reveal_cart')) || [];
+      let tbody = document.getElementById('cart-items');
+      let countEl = document.getElementById('cart-count');
+      
+      tbody.innerHTML = '';
+      let subtotal = 0;
+      let delivery = 100;
+
+      // header cart update
+      let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      if(countEl) countEl.innerText = totalQty;
+
+      // if cart is 0
+      if (cart.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:30px; font-size: 18px;">Your cart is empty! Time to add some amazing outfits.</td></tr>';
+        document.getElementById('cart-subtotal').innerText = '৳ 0';
+        document.getElementById('cart-delivery').innerText = '৳ 0';
+        document.getElementById('cart-total').innerText = '৳ 0';
+        document.getElementById('checkout-btn').href = '#';
+        document.getElementById('checkout-btn').onclick = () => { alert("Your cart is empty!"); return false; };
+        return;
+      }
+
+      // cart product show
+      cart.forEach((item, index) => {
+        let itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+
+        let swatchClass = "swatch-mens";
+        if(item.category.includes("Women")) swatchClass = "swatch-womens";
+        else if(item.category.includes("Baby")) swatchClass = "swatch-baby";
+        else if(item.category.includes("Kids")) swatchClass = "swatch-kids";
+
+        let tr = `
+        <tr>
+          <td>
+            <div class="cart-item-name" style="display: flex; align-items: center;">
+          
+              <img src="${item.image}" alt="${item.name}" style="width: 55px; height: 55px; object-fit: cover; border-radius: 5px; margin-right: 15px;">
+              <span style="font-weight: 500;">${item.name}</span>
+            </div>
+          </td>
+          <td>${item.category}</td>
+          <td>৳ ${item.price}</td>
+          <td><input type="number" class="qty-input" value="${item.qty}" min="1" onchange="updateQty(${index}, this.value)"></td>
+          <td>৳ ${itemTotal}</td>
+          <td><button onclick="removeItem(${index})" class="remove-link" style="border:none; background:none; cursor:pointer; font-weight: 600; color: #d9534f;">Remove</button></td>
+        </tr>`;
+        
+        tbody.innerHTML += tr;
+      });
+
+      // total calculation
+      let grandTotal = subtotal + delivery;
+      document.getElementById('cart-subtotal').innerText = '৳ ' + subtotal;
+      document.getElementById('cart-total').innerText = '৳ ' + grandTotal;
+
+      // checkout and total amount check
+      document.getElementById('checkout-btn').href = `checkout.php?total=${grandTotal}`;
+      document.getElementById('checkout-btn').onclick = null;
+    }
+
+    // quatity change
+    function updateQty(index, newQty) {
+      let cart = JSON.parse(localStorage.getItem('reveal_cart')) || [];
+      cart[index].qty = parseInt(newQty);
+      localStorage.setItem('reveal_cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    // product remove
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('reveal_cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('reveal_cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    // page load to cart generate
+    window.onload = renderCart;
+  </script>
+
+</body>
+</html>

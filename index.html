@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Reveal | Clothing for Every Chapter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo">THE <span>REVEAL</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="index.html#mens">Men's</a></li>
+          <li><a href="index.html#womens">Women's</a></li>
+          <li><a href="index.html#kids">Kids</a></li>
+          <li><a href="index.html#baby">Baby Dress</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-link">🛍 Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">The curtain is rising</p>
+      <h1>Some outfits deserve a curtain call.</h1>
+      <p>New arrivals for him, for her, for the kids, and for the newest member of the family — all in one place.</p>
+      <a href="#mens" class="btn btn-outline">Shop The Collection</a>
+    </div>
+  </section>
+
+  <main class="wrap">
+
+    <!-- ================= MEN'S ================= -->
+    <section class="category-section" id="mens">
+      <div class="category-heading">
+        <h2>Men's</h2>
+        <span class="tag">Tailored &amp; Everyday</span>
+      </div>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-swatch swatch-mens" style="padding: 0; overflow: hidden;">
+            <img src="images/blazer.jpeg" alt="Charcoal Blazer" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Charcoal Tailored Blazer</h3>
+            <p class="product-meta">Sizes: S – XXL</p>
+            <p class="product-price">৳ 3,450</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Charcoal Tailored Blazer', 'Men\'s', 3450,'images/blazer.jpeg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Charcoal Tailored Blazer&price=3450" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch swatch-mens" style="padding: 0; overflow: hidden;">
+            <img src="images/shirt.jpeg" alt="Oxford Shirt" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Classic Oxford Shirt</h3>
+            <p class="product-meta">Sizes: S – XL</p>
+            <p class="product-price">৳ 1,290</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Oxford Shirt', 'Men\'s', 1290,'images/shirt.jpeg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Classic Oxford Shirt&price=1290" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch swatch-mens" style="padding: 0; overflow: hidden;">
+            <img src="images/T-shirt.jpeg" alt="T-shirt" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Premium Polo</h3>
+            <p class="product-meta">Sizes: M – XXL</p>
+            <p class="product-price">৳ 2,150</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Premium Polo', 'Men\'s', 2150,'images/T-shirt.jpeg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Washed T-Shirt&price=2150" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Men's See More Button -->
+      <div style="text-align: right; margin-top: 15px; padding-bottom: 30px; padding-right: 10px;">
+        <a href="mens_more.html" style="background-color: #632338; color: white; padding: 10px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 14px;">See More ➔</a>
+      </div>
+
+    </section>
+
+    <!-- ================= WOMEN'S ================= -->
+    <section class="category-section" id="womens">
+      <div class="category-heading">
+        <h2>Women's</h2>
+        <span class="tag">Elegant &amp; Effortless</span>
+      </div>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-swatch swatch-womens" style="padding: 0; overflow: hidden;">
+            <img src="images/silk_sharee.jpg" alt="silk_sharee" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Premium Silk Sharee</h3>
+            <p class="product-meta">Sizes: XS – L</p>
+            <p class="product-price">৳ 8,890</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Premium Silk Sharee', 'Women\'s', 8890,'images/silk_sharee.jpg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Premium Silk Sharee&price=8890" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch swatch-womens" style="padding: 0; overflow: hidden;">
+            <img src="images/linen_co_ord.jpg" alt="linen_co_ord" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Linen Co-ord Set</h3>
+            <p class="product-meta">Sizes: XS – XL</p>
+            <p class="product-price">৳ 2,340</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Linen Co-ord Set', 'Women\'s', 2340,'images/linen_co_ord.jpg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Linen Co-ord Set&price=2340" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch swatch-womens" style="padding: 0; overflow: hidden;">
+            <img src="images/Three_piece.jpg" alt="Three_piece" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>One-piece Ethnic kurta</h3>
+            <p class="product-meta">Sizes: XS – XXL</p>
+            <p class="product-price">৳ 1,690</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('One-piece Ethnic kurta', 'Women\'s', 1690,'images/Three_piece.jpg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=One-piece Ethnic kurta&price=1690" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Women's See More Button -->
+      <div style="text-align: right; margin-top: 15px; padding-bottom: 30px; padding-right: 10px;">
+        <a href="womens_more.html" style="background-color: #632338; color: white; padding: 10px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 14px;">See More ➔</a>
+      </div>
+
+    </section>
+
+    <!-- ================= KIDS ================= -->
+    <section class="category-section" id="kids">
+      <div class="category-heading">
+        <h2>Kids</h2>
+        <span class="tag">Playful &amp; Durable</span>
+      </div>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-swatch swatch-kids" style="padding: 0; overflow: hidden;">
+            <img src="images/dino_hoodie.jpg" alt="Hoodie" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Dino Print Hoodie</h3>
+            <p class="product-meta">Ages: 3 – 10 yrs</p>
+            <p class="product-price">৳ 990</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Dino Print Hoodie', 'Kids', 990,'images/dino_hoodie.jpg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Dino Print Hoodie&price=990" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch swatch-kids" style="padding: 0; overflow: hidden;">
+            <img src="images/cargo_shorts.jpg" alt="cargo_shorts" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Adventure Cargo Shorts</h3>
+            <p class="product-meta">Ages: 4 – 12 yrs</p>
+            <p class="product-price">৳ 650</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Adventure Cargo Shorts', 'Kids', 650,'images/cargo_shorts.jpg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Adventure Cargo Shorts&price=650" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch swatch-kids" style="padding: 0; overflow: hidden;">
+            <img src="images/skirt_girls.avif" alt="skirt_girls" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Premium Skirt-Party wear</h3>
+            <p class="product-meta">Ages: 5 – 13 yrs</p>
+            <p class="product-price">৳ 19,580</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Premium Skirt-Party wear', 'Kids', 19580,'images/skirt_girls.avif')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Premium Skirt-Party wear&price=19580" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Kids See More Button -->
+      <div style="text-align: right; margin-top: 15px; padding-bottom: 30px; padding-right: 10px;">
+        <a href="kids_more.html" style="background-color: #632338; color: white; padding: 10px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 14px;">See More ➔</a>
+      </div>
+
+    </section>
+
+    <!-- ================= BABY DRESS ================= -->
+    <section class="category-section" id="baby">
+      <div class="category-heading">
+        <h2>Baby Dress</h2>
+        <span class="tag">Soft &amp; Gentle</span>
+      </div>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <div class="product-swatch swatch-baby" style="padding: 0; overflow: hidden;">
+            <img src="images/ruffle_shirt.jpeg" alt="ruffle_shirt" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Tencel Ruffle Shirt</h3>
+            <p class="product-meta">Ages: 0 – 18 months</p>
+            <p class="product-price">৳ 590</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Tencel Ruffle Shirt', 'Baby Dress', 590,'images/ruffle_shirt.jpeg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Tencel Ruffle shirt&price=590" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch swatch-baby" style="padding: 0; overflow: hidden;">
+            <img src="images/Frock.jpeg" alt="Frilled Baby Frock" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Frilled Baby Frock</h3>
+            <p class="product-meta">Ages: 6 – 24 months</p>
+            <p class="product-price">৳ 720</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Frilled Baby Frock', 'Baby Dress', 720,'images/Frock.jpeg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Frilled Baby Frock&price=720" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch swatch-baby" style="padding: 0; overflow: hidden;">
+            <img src="images/swdall_warp.jpeg" alt="Muslin Swaddle Wrap" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="product-info">
+            <h3>Muslin Swaddle Wrap</h3>
+            <p class="product-meta">Ages: 0 – 6 months</p>
+            <p class="product-price">৳ 480</p>
+            <div class="product-actions">
+              <a href="javascript:void(0);" onclick="addToCart('Muslin Swaddle Wrap', 'Baby Dress', 480,'images/swdall_warp.jpeg')" class="btn btn-add">Add to Cart</a>
+              <a href="checkout.php?name=Muslin Swaddle Wrap&price=480" class="btn btn-buy">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Baby Dress See More Button -->
+      <div style="text-align: right; margin-top: 15px; padding-bottom: 30px; padding-right: 10px;">
+        <a href="baby_more.html" style="background-color: #632338; color: white; padding: 10px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 14px;">See More ➔</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER (shared) ================= -->
+  <footer class="site-footer">
+    <p>Project by S Islam Roni|Team OkaZaki.</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com/sakibronii" target="_blank">Facebook</a> | 
+        <a href="https://www.linkedin.com/in/sakibul-islam-roni-37b224241/" target="_blank">LinkedIn</a> |
+        <a href="mailto:sakibulislamroni1815@gmail.com">sakibulislamroni1815@gmail.com</a>
+    </div>
+    <p>phone: 01331775590</p>
+  </footer>
+
+  <script>
+    // Add product to cart
+    function addToCart(name, category, price, imageSrc) {
+        let cart = JSON.parse(localStorage.getItem('reveal_cart')) || [];
+        
+        let existingItem = cart.find(item => item.name === name);
+        if(existingItem) {
+            existingItem.qty += 1; // Increase quantity if item exists
+        } else {
+            // Add new item with image
+            cart.push({ name: name, category: category, price: price, qty: 1, image: imageSrc });
+        }
+        
+        localStorage.setItem('reveal_cart', JSON.stringify(cart));
+        updateCartCount();
+    }
+
+    // Update cart counter in header
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('reveal_cart')) || [];
+        let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+        let countElement = document.getElementById('cart-count');
+        if(countElement) countElement.innerText = totalQty;
+    }
+
+    // Initialize cart count on page load
+    window.onload = updateCartCount;
+  </script>
+
+</body>
+</html>
